@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd"> 
+<tiles-definitions> 
+    <!--首页--> 
+    <definition name="template" template="/template.jsp"> 
+        <!--  <put-attribute name="titleKey" value="PageTitle" type="string"/>--> 
+        <put-attribute name="head" value="/head.jsp"/>
+        <put-attribute name="left" value="/left.jsp"/> 
+        <put-attribute name="bottom" value="/bottom.jsp"/> 
+    </definition> 
+    
+    <definition name="layout" extends="template"> 
+        <put-attribute name="main" expression="/${page}.jsp" /> 
+    </definition>
+</tiles-definitions>
