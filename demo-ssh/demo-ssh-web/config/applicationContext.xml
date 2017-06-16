@@ -54,7 +54,7 @@
     	</property>
     </bean>
     
-    <!-- tiles3配置文件加载 -->
+    <!-- tiles3配置文件加载(跑Junit需要注释)-->
     <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
     	<property name="definitions">
     		<list>
@@ -62,5 +62,5 @@
     		</list>
     	</property>
     </bean>
-    
+     
 </beans>
