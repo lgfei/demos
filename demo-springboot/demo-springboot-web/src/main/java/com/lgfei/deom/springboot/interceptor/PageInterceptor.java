@@ -51,7 +51,7 @@ import com.lgfei.deom.springboot.model.PageVO;
 @Intercepts({@Signature(method = "prepare", type = StatementHandler.class, args = {Connection.class, Integer.class})})
 public class PageInterceptor implements Interceptor
 {
-    private final static Logger LOG = LoggerFactory.getLogger(PageInterceptor.class);
+    private static final Logger LOG = LoggerFactory.getLogger(PageInterceptor.class);
     
     /**
      * 数据库类型，不同的数据库有不同的分页方法

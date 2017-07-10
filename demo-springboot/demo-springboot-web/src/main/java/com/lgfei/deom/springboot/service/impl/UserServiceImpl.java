@@ -25,7 +25,7 @@ import com.lgfei.deom.springboot.service.UserService;
 @Service
 public class UserServiceImpl implements UserService
 {
-    private final static Logger LOG = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger LOG = LoggerFactory.getLogger(UserServiceImpl.class);
     
     @Autowired
     private UserDao userDao;

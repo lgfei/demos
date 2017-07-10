@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.lgfei.deom.springboot.common.constants.Constants;
-import com.lgfei.deom.springboot.common.constants.Signature;
+import com.lgfei.deom.springboot.common.enums.Authors;
 import com.lgfei.deom.springboot.common.util.StringUtil;
 import com.lgfei.deom.springboot.model.PageResult;
 import com.lgfei.deom.springboot.model.PageVO;
@@ -29,7 +29,7 @@ import com.lgfei.deom.springboot.service.UserService;
 @RequestMapping("/user")
 public class UserController
 {
-    private final static Logger LOG = LoggerFactory.getLogger(UserController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
     
     @Autowired
     private UserService userService;
@@ -38,7 +38,7 @@ public class UserController
     public String testThymeleaf(@PathVariable("name") String name, Model model)
     {
         LOG.info("name:{}", name);
-        if (Signature.AUTHOR.equals(name))
+        if (Authors.LGFEI.getName().equals(name))
         {
             model.addAttribute("name", name);
             return "user";

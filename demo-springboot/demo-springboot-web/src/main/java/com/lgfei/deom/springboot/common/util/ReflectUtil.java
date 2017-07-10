@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ReflectUtil
 {
-    private final static Logger LOG = LoggerFactory.getLogger(ReflectUtil.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ReflectUtil.class);
     
     /**
      * 利用反射获取指定对象的指定属性

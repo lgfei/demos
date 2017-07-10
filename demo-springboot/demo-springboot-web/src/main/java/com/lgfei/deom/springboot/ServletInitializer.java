@@ -17,7 +17,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
  */
 public class ServletInitializer extends SpringBootServletInitializer
 {
-    private final static Logger LOG = LoggerFactory.getLogger(ServletInitializer.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ServletInitializer.class);
     
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application)
