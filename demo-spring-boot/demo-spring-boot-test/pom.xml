@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.lgfei.demo</groupId>
+		<artifactId>demo-spring-boot</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>demo-spring-boot-test</artifactId>
+	<name>demo-spring-boot-test</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- 单元测试 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.lgfei.demo</groupId>
+			<artifactId>demo-spring-boot-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.lgfei.demo</groupId>
+			<artifactId>demo-spring-boot-web</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+	</dependencies>
+</project>
