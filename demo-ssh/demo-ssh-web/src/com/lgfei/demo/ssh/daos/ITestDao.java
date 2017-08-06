@@ -2,11 +2,11 @@ package com.lgfei.demo.ssh.daos;
 
 import java.util.List;
 
-import com.lgfei.demo.ssh.pojo.Demo;
+import com.lgfei.demo.ssh.pojo.Test;
 
-public interface IDemoDao {
+public interface ITestDao {
 	
 	public List<?> findAll();
 	
-	public void save(Demo demo);
+	public void save(Test demo);
 }

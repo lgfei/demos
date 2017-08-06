@@ -2,11 +2,11 @@ package com.lgfei.demo.ssh.services;
 
 import java.util.List;
 
-import com.lgfei.demo.ssh.pojo.Demo;
+import com.lgfei.demo.ssh.pojo.Test;
 
-public interface IDemoService {
+public interface ITestService {
 
 	public List<?> findAll();
 	
-	public void save(Demo demo);
+	public void save(Test demo);
 }

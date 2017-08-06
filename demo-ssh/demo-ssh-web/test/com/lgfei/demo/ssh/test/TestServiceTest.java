@@ -10,14 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.lgfei.demo.ssh.services.IDemoService;
+import com.lgfei.demo.ssh.services.ITestService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath*:applicationContext.xml"})
-public class DemoServiceTest {
+public class TestServiceTest {
 	
 	@Autowired
-	private IDemoService service;
+	private ITestService service;
 
 	@Test
 	public void test() {
