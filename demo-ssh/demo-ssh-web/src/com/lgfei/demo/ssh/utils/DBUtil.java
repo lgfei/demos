@@ -12,7 +12,7 @@ public class DBUtil {
 	
 	public static HibernateTemplate getHibernateTemplate() {
 		if(ht==null){
-			ctx = new FileSystemXmlApplicationContext("config\\applicationContext.xml");
+			ctx = new FileSystemXmlApplicationContext("classpath*:applicationContext.xml");
 			SessionFactory sessionFactory = (SessionFactory)ctx.getBean("sessionFactory");
 			ht = new HibernateTemplate(sessionFactory);
 		}

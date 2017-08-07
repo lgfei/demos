@@ -5,9 +5,18 @@
 
 <struts>
 
+    <!-- 把action交给spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	
     <constant name="struts.enable.DynamicMethodInvocation" value="true" />
     <constant name="struts.devMode" value="true" />
-     <constant name="struts.action.extension" value="do"/>
+    <constant name="struts.i18n.encoding" value="utf-8"/>
+	
+    <!-- 设置  不需要拦截器过滤的文件  或者 请求  -->
+    <constant name="struts.action.excludePattern" value="/js.*"/>
+	<constant name="struts.action.excludePattern" value="/css.*"/>
+	<constant name="struts.action.excludePattern" value="/images.*"/>
+	<constant name="struts.action.excludePattern" value="/servlet.*"/>
 
     <package name="default" namespace="/test" extends="struts-default,tiles-default">
 
@@ -26,6 +35,28 @@
         </action>
     </package>
 
+    <package name="student" namespace="/student" extends="struts-default">
+		<action name="student_*" class="com.lgfei.demo.ssh.action.StudentAction" method="{1}">
+            <result  name="success" type="redirect">/pages/studentInfo.jsp</result> 
+            <result  name="error" type="redirect">/error.jsp</result> 
+        </action>
+    </package>
+
+    <package name="manager" namespace="/manager" extends="struts-default,tiles-default">
+		<action name="manager_*" class="com.lgfei.demo.ssh.action.ManagerAction" method="{1}">
+            <result  name="success" type="tiles">layout</result>
+            <result  name="input">/login.jsp</result>
+            <result  name="error">/login.jsp</result>
+            
+            <result  name="logout" type="redirect">/index.jsp</result>
+            
+            <result name="invalid.token">/error.jsp</result> 
+            
+            <interceptor-ref name="token"></interceptor-ref>
+	 		<interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+    </package>
+    
     <!-- Add packages here -->
 
 </struts>

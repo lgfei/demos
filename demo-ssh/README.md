@@ -1,6 +1,6 @@
 # 三大框架 Demos
 
-- [demo-springboot-web](https://github.com/lgfei/demos/tree/master/demo-ssh/demo-ssh-web)：web开发综合使用案例
+- [demo-ssh-web](https://github.com/lgfei/demos/tree/master/demo-ssh/demo-ssh-web)：web开发综合使用案例
 	
 	工程概述： Spring + Struts2 + Hibernate + Tiles3 示例代码
 

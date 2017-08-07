@@ -6,15 +6,18 @@
 <!-- hibernate-mapping是映射文件的根元素 -->
 <hibernate-mapping package="com.lgfei.demo.ssh.pojo">
 	<!-- 每个class元素对应一个持久化对象 -->
-	<class name="Test" table="t_test">
+	<class name="Student" table="t_student">
 		<!-- id元素定义持久化类的标识属性 -->
-		<id name="id" column="id">
+		<id name="id" column="id" type="long">
 			<!-- 指定主键生成策略 -->
-			<generator class="assigned"></generator>
+    		<generator class="assigned" />
 		</id>
 		<!-- property元素定义常规属性 -->
 		<property name="no" column="no"/>
 		<property name="name" column="name"/>
+		<property name="sex" column="sex"/>
+		<property name="birthday" column="birthday"/>
+		<property name="idcard" column="idcard"/>
 		<property name="createdBy" column="created_by"/>
 		<property name="createdDate" column="created_date"/>
 		<property name="lastUpdatedBy" column="last_updated_by"/>

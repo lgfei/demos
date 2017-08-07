@@ -1,18 +1,15 @@
 package com.lgfei.demo.ssh.pojo;
 
-/**
- * test实体类
- * @author 龙国飞
- * 2014-8-24
- */
-public class Test extends Base
+public class Manager extends Base
 {
     
-    private static final long serialVersionUID = -5282711512465926257L;
+    private static final long serialVersionUID = -4239492139565847697L;
     
     private String no;
     
     private String name;
+    
+    private String pwd;
     
     public String getNo()
     {
@@ -33,4 +30,15 @@ public class Test extends Base
     {
         this.name = name;
     }
+    
+    public String getPwd()
+    {
+        return pwd;
+    }
+    
+    public void setPwd(String pwd)
+    {
+        this.pwd = pwd;
+    }
+    
 }
