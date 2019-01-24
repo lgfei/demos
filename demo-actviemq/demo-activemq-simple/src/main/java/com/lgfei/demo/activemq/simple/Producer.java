@@ -14,7 +14,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import com.lgfei.demo.activemq.simple.common.Constants;
 
-public class Producter {
+public class Producer {
 
     AtomicInteger count = new AtomicInteger(0);
     //链接工厂

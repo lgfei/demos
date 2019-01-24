@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @EnableScheduling
-public class Producter {
+public class Producer {
 	 
     @Autowired
     private JmsMessagingTemplate jmsMessagingTemplate;
