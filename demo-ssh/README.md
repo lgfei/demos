@@ -4,7 +4,7 @@
 	
 	工程概述： Spring + Struts2 + Hibernate + Tiles3 示例代码
 
-	提交日志：
+	大事件：
 
 	- 2016-11-17：重新进行分支管理
 
