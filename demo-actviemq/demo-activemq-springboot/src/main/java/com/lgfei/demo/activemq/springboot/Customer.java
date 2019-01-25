@@ -10,7 +10,7 @@ public class Customer {
      * 客户端消费
      * @param consumer
      */
-    @JmsListener(destination = "springboot.activemq")
+    @JmsListener(destination = "springboot.activemq.queue")
     public void receiveQueue(String msg) {
         System.out.println("消费者获取的消息:" + msg);
     }

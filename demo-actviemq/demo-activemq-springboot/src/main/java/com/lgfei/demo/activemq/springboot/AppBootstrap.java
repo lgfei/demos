@@ -12,7 +12,7 @@ public class AppBootstrap
 {
     @Bean
     public Queue queue() {
-       return new ActiveMQQueue("springboot.activemq");
+       return new ActiveMQQueue("springboot.activemq.queue");
     }
     
     public static void main( String[] args )

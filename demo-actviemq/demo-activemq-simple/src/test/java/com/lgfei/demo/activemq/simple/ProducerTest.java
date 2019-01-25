@@ -23,7 +23,7 @@ public class ProducerTest {
 
 		//@Override
 		public void run() {
-			producer.sendMessage("simple.actviemq");
+			producer.sendMessage("simple.actviemq.queue");
 		}
 	}
 }

@@ -28,7 +28,7 @@ public class ComsumerTest {
 
         //@Override
         public void run() {
-        	comsumer.getMessage("simple.actviemq");
+        	comsumer.getMessage("simple.actviemq.queue");
         }
     }
 }
