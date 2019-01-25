@@ -5,16 +5,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.JMSException;
+import javax.jms.Message;
 import javax.jms.MessageConsumer;
-import javax.jms.Queue;
+import javax.jms.MessageListener;
 import javax.jms.Session;
 import javax.jms.TextMessage;
+import javax.jms.Topic;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import com.lgfei.demo.activemq.simple.common.Constants;
 
-public class Comsumer {
+public class Subscriber2 {
 
 	AtomicInteger count = new AtomicInteger();
 	
@@ -37,34 +39,35 @@ public class Comsumer {
         }
     }
 
-    public void getMessage(String queueName){
+    public void getMessage(String topicName){
         try {
-            Queue queue = session.createQueue(queueName);
+        	Topic topic = session.createTopic(topicName);
             MessageConsumer consumer = null;
 
             if(threadLocal.get()!=null){
                 consumer = threadLocal.get();
             }else{
-                consumer = session.createConsumer(queue);
+                consumer = session.createConsumer(topic);
+                // 注册消息监听
+                consumer.setMessageListener(new Listener2());
                 threadLocal.set(consumer);
-            }
-            
-            // 每个消费者每10秒消费一条消息
-            while(true) {
-            	Thread.sleep(10000);
-            	TextMessage msg = (TextMessage) consumer.receive();
-                if(msg!=null) {
-                    msg.acknowledge();
-                    System.out.println("Consumer=" + Thread.currentThread().getName() + ",count=" + count.getAndIncrement());
-                    System.out.println("获取的消息："+ msg.getText());
-                }else {
-                	break;
-                }
             }
         } catch (JMSException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+        }
     }
+
+}
+
+
+class Listener2 implements MessageListener{
+
+	public void onMessage(Message message) {
+        try {
+            System.out.println("订阅者2收到的消息："+((TextMessage)message).getText());
+        } catch (JMSException e) {
+            e.printStackTrace();
+        }
+	}
+
 }
