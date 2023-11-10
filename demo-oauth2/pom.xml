@@ -12,7 +12,6 @@
 	<modules>
 		<module>demo-oauth2-auth</module>
 		<module>demo-oauth2-resource</module>
-		<module>demo-oauth2-client</module>
 	</modules>
 	
 </project>
